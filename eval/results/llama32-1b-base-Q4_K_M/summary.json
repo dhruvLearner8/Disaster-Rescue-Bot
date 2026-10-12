@@ -1,0 +1,12 @@
+{
+  "model": "models/gguf/llama32-1b-base-Q4_K_M.gguf",
+  "size_mb": 770,
+  "n_scenarios": 20,
+  "mean_coverage": 0.579,
+  "critical_coverage": 0.375,
+  "flagged_for_review": [
+    "fl-016"
+  ],
+  "mean_tok_per_s": 123.5,
+  "mean_prompt_ms": 39.9
+}
