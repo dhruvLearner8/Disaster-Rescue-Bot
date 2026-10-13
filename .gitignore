@@ -4,3 +4,4 @@ models/
 third_party/
 .DS_Store
 .env
+data/raw/
