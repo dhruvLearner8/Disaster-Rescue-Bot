@@ -8,18 +8,7 @@ import json
 import sys
 from collections import Counter
 
-# Must match the lists in data/prompts/question_gen_v2.md
-ALLOWED = {
-    "phase": {"before", "during", "after"},
-    "urgency": {"critical", "high", "medium", "low"},
-    "where": {"car", "house", "apartment", "basement", "rooftop", "small patch of land",
-              "in the water", "campsite", "walking outside", "workplace", "school"},
-    "who": {"alone", "kids", "baby", "elderly parent", "pet", "someone injured",
-            "someone who can't swim", "strangers"},
-    "complication": {"none", "power out", "phone battery low", "no car", "night time",
-                     "injury", "medical condition", "doesn't speak English well"},
-    "state": {"calm", "worried", "panicking", "shock"},
-}
+from labels import ALLOWED
 
 path = sys.argv[1]
 rows = [json.loads(line) for line in open(path) if line.strip()]
