@@ -5,3 +5,5 @@ third_party/
 .DS_Store
 .env
 data/raw/
+flood_dpo_complete.jsonl
+flood_rejected.jsonl
