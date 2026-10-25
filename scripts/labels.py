@@ -4,7 +4,7 @@ ALLOWED = {
     "phase": {"before", "during", "after"},
     "urgency": {"critical", "high", "medium", "low"},
     "where": {"car", "house", "apartment", "basement", "rooftop", "small patch of land",
-              "in the water", "campsite", "walking outside", "workplace", "school"},
+              "in the water", "campsite", "walking outside", "workplace", "school", "public place"},
     "who": {"alone", "kids", "baby", "elderly parent", "pet", "someone injured",
             "someone who can't swim", "strangers"},
     "complication": {"none", "power out", "phone battery low", "no car", "night time",

@@ -35,3 +35,16 @@ which is why it moved here from v5 on.)
 
 ## question_gen_v1
 - First version.
+
+## question_gen_multi_v2 (DeepSeek, multi-disaster)
+- v1 test (20 questions, 4 disasters): the scenario took over. "injury" made 3 of 5 wildfire
+  messages about a broken ankle, "phone battery low" made heat messages about the phone,
+  "alone" was filler. Fixed: scenario is hidden background, at most one detail per batch.
+- v1 messages like "no car where do we go" don't say which disaster. The app has no disaster
+  tag, so 4 of 5 messages must carry a clue in the words (see, hear, smell, feel).
+- Phase definitions made stricter ("before" = nothing is happening yet).
+
+## question_gen_multi_v3 (DeepSeek, multi-disaster)
+- v2 fixed the "which disaster" clue, but "injury" still appeared in 3 of 5 wildfire messages
+  ("at most one" was ignored). Now the script picks one message number k and the extra
+  details (where, who, complication) apply to message k only. The other rows store None.
