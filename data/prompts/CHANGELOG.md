@@ -48,3 +48,14 @@ which is why it moved here from v5 on.)
 - v2 fixed the "which disaster" clue, but "injury" still appeared in 3 of 5 wildfire messages
   ("at most one" was ignored). Now the script picks one message number k and the extra
   details (where, who, complication) apply to message k only. The other rows store None.
+
+## question_gen_multi_v4 (DeepSeek, multi-disaster)
+- v3 full run: only about 70% of sampled rows carried a clue to the specific disaster; weakest were the
+  storm family (thunderstorm 1/5, hurricane 2/5, tornado 2/5, ice storm 2/5). Typical failure: a generic
+  message that fits any storm ("power lines down across the street, is it safe to walk my dog?").
+- Changed one thing: every message (not 4 of 5) needs a clue that would not fit another disaster, with a
+  self-check and a different clue per message.
+- Result (blind check, 80 v3 rows vs 80 v4 rows, thunderstorm/hurricane/tornado/ice storm): clear disaster clue
+  50% (v3) vs 55% (v4), which is noise. v4 did NOT fix it, so v3 stays the prompt for the full dataset.
+  Cause: "after" messages are naturally generic (22% have a clue, vs 74% "before" and 60% "during"):
+  "downed line in the yard, safe to walk?" is the same question after any storm. Not a prompt problem.
