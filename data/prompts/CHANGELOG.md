@@ -59,3 +59,11 @@ which is why it moved here from v5 on.)
   50% (v3) vs 55% (v4), which is noise. v4 did NOT fix it, so v3 stays the prompt for the full dataset.
   Cause: "after" messages are naturally generic (22% have a clue, vs 74% "before" and 60% "during"):
   "downed line in the yard, safe to walk?" is the same question after any storm. Not a prompt problem.
+
+## answer_gen_multi_v1 / v2 (DeepSeek, any disaster, answers)
+- v1 is the flood answer prompt made general: "disaster-help assistant", the disaster is given as a hidden hint and
+  only named in the answer if the message names it. 911 only. Pilot (25 answers, avg 91 words): 4 answers were one
+  paragraph with inline steps, 12 of 25 ended with a question, 5 were over the word limit, one earthquake answer
+  allowed "stay in the doorway" (outdated advice).
+- v2 (one set of related fixes): each step on its own line, no ending question unless the disaster is unclear,
+  follow current official guidance. The script also puts inline steps on separate lines as a safety net.

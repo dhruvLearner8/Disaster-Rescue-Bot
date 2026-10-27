@@ -1,0 +1,30 @@
+name: DisasterHelper
+options:
+  bundleIdPrefix: com.dhruv
+  deploymentTarget:
+    iOS: "16.4"
+targets:
+  DisasterHelper:
+    type: application
+    platform: iOS
+    sources:
+      - path: Sources
+      - path: Resources            # holds flood-model.gguf (added by ios/setup.sh, not in git)
+        buildPhase: resources
+        optional: true
+    dependencies:
+      - framework: ../../third_party/llama.cpp/build-apple/llama.xcframework
+        embed: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.dhruv.DisasterHelper
+        PRODUCT_NAME: DisasterHelper
+        SWIFT_VERSION: "5.9"
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: Disaster Helper
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: ""        # pick your team in Xcode (Signing & Capabilities) to run on an iPhone

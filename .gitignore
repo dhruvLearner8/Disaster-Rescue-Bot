@@ -7,3 +7,6 @@ third_party/
 data/raw/
 flood_dpo_complete.jsonl
 flood_rejected.jsonl
+ios/DisasterHelper/Resources/*.gguf
+ios/DisasterHelper/DisasterHelper.xcodeproj/
+ios/DisasterHelper/build/
